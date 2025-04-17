@@ -1,0 +1,68 @@
+:global(body)
+{
+  background-color: black;
+}
+
+.loginHeader {
+  margin:40px;
+ margin-right:220px;
+  font-size: 24px;
+  color:#f9f9f9;
+  
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+ margin-top:40px;
+ align-items: center;
+  width: 300px;
+  background-color: #333;
+  color:#f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.labelText {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.forgotPassword {
+  font-size: 12px;
+  color: blue;
+  cursor: pointer;
+}
+
+.loginButton {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.signupButton {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+}

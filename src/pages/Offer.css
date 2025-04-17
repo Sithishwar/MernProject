@@ -1,0 +1,40 @@
+h1{
+    margin-left: 47%;
+}
+#of1 img{
+    
+    width:100%;
+    height:auto;
+}
+#of2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+}
+#of2 img{
+    width:90%;
+    height:auto;
+   margin-left:20px;
+}
+#of3{
+    
+    margin-top: 30px;
+}
+#of3 img{
+    width:95%;
+    height:auto;
+    padding:30px;
+}
+#of4{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    margin-bottom: 10px;
+}
+.of5{
+    width:100%;
+    height:auto;
+}
+.of5 img{
+    width:300px;
+    height:auto;
+}

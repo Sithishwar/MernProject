@@ -1,0 +1,55 @@
+:root {
+    --primary: #F8E1E7;       /* Light pink background */
+    --secondary: #D8A7B1;     /* Dusty rose accent */
+    --accent: #B76E79;        /* Deeper rose for buttons/highlights */
+    --dark: #4A3B3D;          /* Dark mauve for text */
+    --light: #FFF5F8;         /* Lightest pink for cards */
+    --neutral: #E9DFE0;       /* Neutral light tone for sections */
+  }
+  
+  /* Main Heading */
+  .mainheading {
+    margin: 0;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 600;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    cursor: pointer;
+    background-color: var(--dark);
+    color: var(--accent); /* Deeper rose */
+  }
+  
+  /* Button Styling */
+  .btn {
+    background-color: var(  --secondary); /* Dusty rose */
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px 30px;
+    color: var(  --dark);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: var(--accent); /* Deeper rose on hover */
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Answer Styling */
+  .answer {
+    font-size: 30px;
+    color: var(--dark);         /* Text */
+    background-color: var(--light); /* Background */
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
