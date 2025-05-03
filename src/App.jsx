@@ -66,7 +66,7 @@ function App() {
           </ProtectedRoute>
         } />
         
-        <Route path="/terms" element={
+        <Route path="/TAC" element={
           <ProtectedRoute>
             <>
               <Navbar />
