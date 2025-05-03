@@ -15,9 +15,10 @@ function OurStory() {
           <h2 className={styles.sectionTitle}>The KosmoCare Journey</h2>
           
           <img 
-            src="/founder-image.jpg" 
+            src="/newcomponent/Other/KosmoCareFounder.jpg" 
             alt="KosmoCare Founder" 
             className={styles.featureImage}
+            style={{ width: "180px", height: "180px", objectFit: "cover" }}
           />
           
           <div className={styles.card}>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Page1.module.css';
+import Footer from '../components/Footer';
 import Filter from '../components/Filter';
 import ProductDetail from '../components/ProductDetail';
 
@@ -137,6 +138,7 @@ function Page1() {
           addToCart={addToCart}
         />
       )}
+      <Footer/>
     </div>
   );
 }
