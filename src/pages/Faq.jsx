@@ -1,71 +1,100 @@
-import { useState } from "react";
-import styles from './Faq.module.css'
-function Faq(){
-const [openindex,setopenindex]=useState([]);
-const faques = [
-  { 
-    question: "Are your products cruelty-free?", 
-    answer: "Yes, all our products are 100% cruelty-free and not tested on animals." 
-  },
-  { 
-    question: "Do you offer vegan cosmetics?", 
-    answer: "Yes, we have a wide range of vegan-friendly products free from animal-derived ingredients." 
-  },
-  { 
-    question: "How can I choose the right foundation shade?", 
-    answer: "You can use our online shade-matching tool or visit one of our stores for a skin tone analysis." 
-  },
-  { 
-    question: "Are your products safe for sensitive skin?", 
-    answer: "Yes, many of our products are dermatologically tested and suitable for sensitive skin. Look for the 'sensitive skin' label on product pages." 
-  },
-  { 
-    question: "What is the shelf life of your cosmetics?", 
-    answer: "Each product has a specific shelf life mentioned on the packaging. Most products last between 12-24 months after opening." 
-  },
-  { 
-    question: "Do you use parabens or sulfates in your products?", 
-    answer: "No, our products are free from harmful chemicals like parabens, sulfates, and phthalates." 
-  },
-  { 
-    question: "Can I return a product if it doesn’t suit me?", 
-    answer: "Yes, we accept returns within 30 days of purchase, provided the product is unused and in its original packaging." 
-  },
-  { 
-    question: "Do you have a loyalty program for customers?", 
-    answer: "Yes! Join our rewards program to earn points on every purchase and get exclusive discounts." 
-  },
-  { 
-    question: "How can I make my lipstick last longer?", 
-    answer: "For long-lasting lipstick, exfoliate your lips, apply a lip primer, and use a lip liner before applying the lipstick." 
-  },
-  { 
-    question: "What is the best way to remove makeup?", 
-    answer: "Use a gentle makeup remover or micellar water, followed by a mild cleanser to remove all residue." 
-  }
-];
+import React, { useState } from 'react';
+import styles from './Faq.module.css';
 
-  const toggleFaq=(index)=>{
-    if(openindex.includes(index))
+function FAQ() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const faqData = [
     {
-      setopenindex(openindex.filter((i) => i !== index));
+      question: "How do I place an order?",
+      answer: "You can place an order by browsing our products, adding items to your cart, and proceeding to checkout. Follow the steps to enter your shipping and payment information to complete your purchase."
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, UPI, and net banking options. All payments are securely processed."
+    },
+    {
+      question: "How long will shipping take?",
+      answer: "Standard shipping typically takes 3-5 business days. Express shipping options are available at checkout for 1-2 business day delivery. International shipping may take 7-14 business days."
+    },
+    {
+      question: "What is your return policy?",
+      answer: "We offer a 30-day return policy for most items in their original, unused condition. Some products like opened cosmetics may not be eligible for returns due to hygiene reasons. Please see our full return policy for details."
+    },
+    {
+      question: "Are your products cruelty-free?",
+      answer: "Yes, all KosmoCare products are 100% cruelty-free and we never test on animals. We're committed to ethical beauty practices and sustainable sourcing."
+    },
+    {
+      question: "Do you ship internationally?",
+      answer: "Yes, we ship to most countries worldwide. International shipping rates and delivery times vary by location. You can see shipping options during checkout."
+    },
+    {
+      question: "How can I track my order?",
+      answer: "Once your order ships, you'll receive a confirmation email with tracking information. You can also log into your account on our website to view order status and tracking details."
+    },
+    {
+      question: "Are your products suitable for sensitive skin?",
+      answer: "Many of our products are formulated for sensitive skin, but we recommend checking the specific product details and ingredients list. Products marked 'for sensitive skin' have been specially formulated and tested."
     }
-    else{
-   setopenindex([...openindex,index]);
-  }
+  ];
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  return (
+    <div className={styles.faqContainer}>
+      <div className={styles.faqHeader}>
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to common questions about KosmoCare products and services</p>
+      </div>
+
+      <div className={styles.faqContent}>
+        <div className={styles.faqAccordion}>
+          {faqData.map((faq, index) => (
+            <div 
+              key={index} 
+              className={`${styles.faqItem} ${activeIndex === index ? styles.active : ''}`}
+            >
+              <div 
+                className={styles.faqQuestion}
+                onClick={() => toggleAccordion(index)}
+              >
+                <h3>{faq.question}</h3>
+                <span className={styles.faqIcon}>
+                  {activeIndex === index ? '−' : '+'}
+                </span>
+              </div>
+              <div className={styles.faqAnswer} style={{
+                maxHeight: activeIndex === index ? '500px' : '0'
+              }}>
+                <p>{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.faqSidebar}>
+          <div className={styles.contactBox}>
+            <h3>Still have questions?</h3>
+            <p>Our customer support team is here to help you with any questions or concerns.</p>
+            <button className={styles.contactBtn}>Contact Us</button>
+          </div>
+          
+          <div className={styles.resourcesBox}>
+            <h3>Helpful Resources</h3>
+            <ul>
+              <li><a href="/shipping">Shipping Information</a></li>
+              <li><a href="/returns">Returns & Exchanges</a></li>
+              <li><a href="/product-care">Product Care</a></li>
+              <li><a href="/ingredients">Ingredients Guide</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
-return(
-    <>
-    <div className={styles.mainheading}>FAQS</div>
-   { faques.map((faque,index)=>(
-    <div key={index}>
-    <button className={styles.btn} onClick={()=>toggleFaq(index)}>{faque.question}{openindex.includes(index)  ? "▲" : "▼"}</button>
-    {openindex.includes(index)  && <p className={styles.answer}>{faque.answer}</p>}
-   </div>))}
-    </>
-);
-    
-    
-  
-}
-export default Faq;
+
+export default FAQ;

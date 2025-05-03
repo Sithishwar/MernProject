@@ -1,0 +1,110 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  padding: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.closeButton {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.modalContent {
+  display: flex;
+  gap: 30px;
+}
+
+.productImage {
+  flex: 1;
+  max-width: 400px;
+}
+
+.productImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.productDetails {
+  flex: 1;
+  padding: 20px;
+}
+
+.productDetails h2 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.price {
+  font-size: 24px;
+  color: #9c27b0;
+  margin: 10px 0 20px;
+  font-weight: bold;
+}
+
+.description {
+  margin: 20px 0;
+}
+
+.description h3 {
+  margin: 0 0 10px 0;
+  color: #444;
+}
+
+.description p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.addToCartButton {
+  background-color: #9c27b0;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.addToCartButton:hover {
+  background-color: #7b1fa2;
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    flex-direction: column;
+  }
+  
+  .productImage {
+    max-width: 100%;
+  }
+  
+  .productDetails {
+    padding: 10px 0;
+  }
+}

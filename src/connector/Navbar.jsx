@@ -54,9 +54,15 @@ function Navbar() {
           <div className={styles.navbarLinks}>
             <Link to="/" className={`${styles.navLink} ${isActive('/') ? styles.active : ''}`}>Home</Link>
             <Link to="/About" className={`${styles.navLink} ${isActive('/About') ? styles.active : ''}`}>About</Link>
-            <Link to="/Offer" className={`${styles.navLink} ${isActive('/Offer') ? styles.active : ''}`}>Offers</Link>
             <Link to="/Faq" className={`${styles.navLink} ${isActive('/Faq') ? styles.active : ''}`}>FAQ</Link>
             <Link to="/TAC" className={`${styles.navLink} ${isActive('/TAC') ? styles.active : ''}`}>Terms</Link>
+           
+            
+            <li className={styles.navItem}>
+              <Link to="/account" className={styles.navLink}>
+                <i className="fa fa-user"></i> Account
+              </Link>
+            </li>
           </div>
           
           <div className={styles.navbarActions}>
